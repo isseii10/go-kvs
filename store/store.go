@@ -2,8 +2,17 @@ package store
 
 import (
 	"context"
+	"errors"
 	"io"
 )
+
+var (
+	ErrKeyNotFound  = errors.New("not found key")
+	ErrUnknownOp    = errors.New("unknown op")
+	ErrNotSupported = errors.New("not supported")
+)
+
+var Tombstone = []byte{0x00}
 
 type Txn interface {
 	Get(ctx context.Context, key []byte) ([]byte, error)
