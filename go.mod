@@ -1,6 +1,6 @@
 module github.com/isseii10/go-kvs
 
-go 1.22.1
+go 1.22.4
 
 require (
 	github.com/armon/go-metrics v0.4.1 // indirect
